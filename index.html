@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101827">
+  <title>Web Racer — Neon Sprint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Web Racer">
+        <span class="brand-mark">WR</span>
+        <span>WEB <b>RACER</b></span>
+      </a>
+      <div class="best">BEST <strong id="bestTop">0 m</strong></div>
+    </header>
+
+    <section class="game-shell" aria-label="Game Web Racer">
+      <div class="game-heading">
+        <div>
+          <p class="eyebrow">ARCADE RACING</p>
+          <h1>Neon <span>Sprint</span></h1>
+        </div>
+        <div class="status-pill"><i></i> SOLO RUN</div>
+      </div>
+
+      <div class="hud" id="hud">
+        <div class="hud-item"><span>TIME</span><strong id="time">00:00</strong></div>
+        <div class="hud-item"><span>DISTANCE</span><strong id="distance">0 <small>m</small></strong></div>
+        <div class="hud-item"><span>SPEED</span><strong id="speed">0 <small>km/h</small></strong></div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="480" height="720" aria-label="Lintasan balap"></canvas>
+
+        <div class="overlay" id="menuOverlay">
+          <div class="overlay-card">
+            <div class="mini-car">🚘</div>
+            <p class="eyebrow">READY, SET, GO</p>
+            <h2>Take the <span>lead.</span></h2>
+            <p class="overlay-copy">Hindari lalu lintas, jaga kecepatan, dan pecahkan rekor jarakmu.</p>
+            <button class="primary-btn" id="startBtn">Mulai Bermain <span>→</span></button>
+            <p class="hint">← → / A D untuk belok &nbsp;·&nbsp; ↑ / W untuk gas</p>
+          </div>
+        </div>
+
+        <div class="overlay hidden" id="endOverlay">
+          <div class="overlay-card">
+            <div class="result-icon" id="resultIcon">⚡</div>
+            <p class="eyebrow" id="resultEyebrow">RUN COMPLETE</p>
+            <h2 id="resultTitle">Nice drive!</h2>
+            <p class="overlay-copy" id="resultCopy">Kamu berhasil menempuh 0 meter.</p>
+            <div class="result-stats">
+              <div><span>DISTANCE</span><strong id="finalDistance">0 m</strong></div>
+              <div><span>TIME</span><strong id="finalTime">00:00</strong></div>
+              <div><span>BEST</span><strong id="finalBest">0 m</strong></div>
+            </div>
+            <button class="primary-btn" id="restartBtn">Main Lagi <span>↻</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-footer">
+        <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / ARROW KEYS</span>
+        <span class="footer-dot">●</span>
+        <span>AVOID THE TRAFFIC</span>
+      </div>
+
+      <div class="touch-controls" aria-label="Kontrol sentuh">
+        <button class="touch-btn" id="leftBtn" aria-label="Belok kiri">←</button>
+        <button class="touch-btn brake" id="brakeBtn" aria-label="Rem">↓</button>
+        <button class="touch-btn" id="rightBtn" aria-label="Belok kanan">→</button>
+        <button class="touch-btn gas" id="gasBtn" aria-label="Gas">GAS ↑</button>
+      </div>
+    </section>
+    <footer class="page-footer">BUILT FOR THE OPEN ROAD <span>✦</span> WEB RACER v1.0</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

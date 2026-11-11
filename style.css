@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --panel: #111c2d;
+  --muted: #8290a5;
+  --cyan: #47e6df;
+  --lime: #c8ff5c;
+  --white: #f4f7fb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: radial-gradient(ellipse at 50% 0%, #1b2a40 0%, var(--bg) 58%); color: var(--white); font-family: 'DM Sans', sans-serif; }
+body { min-height: 100vh; padding: 20px 16px 28px; }
+button { font: inherit; }
+.app { width: min(100%, 590px); margin: 0 auto; }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 2px 2px 22px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--white); text-decoration: none; font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+.brand b { color: var(--cyan); }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #47e6df66; border-radius: 10px; color: var(--cyan); font: 800 13px 'Barlow Condensed', sans-serif; letter-spacing: 0; transform: skew(-7deg); }
+.best { color: var(--muted); font-size: 10px; letter-spacing: 1.6px; font-weight: 700; }
+.best strong { color: var(--lime); margin-left: 8px; font-size: 13px; letter-spacing: 0; }
+.game-shell { background: linear-gradient(145deg, #172438, #101a2a 72%); border: 1px solid #ffffff13; border-radius: 22px; padding: 20px; box-shadow: 0 24px 80px #0008, inset 0 1px #ffffff0b; }
+.game-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 17px; }
+.eyebrow { color: var(--cyan); font-size: 9px; font-weight: 800; letter-spacing: 2.5px; margin: 0 0 5px; }
+h1, h2 { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; margin: 0; letter-spacing: .5px; }
+h1 { font-size: 34px; line-height: .95; }
+h1 span, h2 span { color: var(--lime); }
+.status-pill { border: 1px solid #ffffff1c; background: #ffffff08; padding: 7px 10px; border-radius: 30px; color: #a9b5c6; font-size: 9px; font-weight: 800; letter-spacing: 1.2px; }
+.status-pill i { display: inline-block; width: 6px; height: 6px; background: var(--lime); border-radius: 50%; margin: 0 6px 1px 0; box-shadow: 0 0 10px var(--lime); }
+.hud { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+.hud-item { padding: 10px 12px; border-radius: 10px; background: #09132199; border: 1px solid #ffffff0c; }
+.hud-item span, .result-stats span { display: block; color: #74849a; font-size: 8px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 3px; }
+.hud-item strong { font: 700 20px 'Barlow Condensed', sans-serif; letter-spacing: .5px; }
+.hud-item small { font: 600 10px 'DM Sans', sans-serif; color: #8290a5; }
+.canvas-wrap { position: relative; overflow: hidden; border-radius: 13px; background: #202b35; border: 1px solid #ffffff1c; line-height: 0; }
+canvas { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; touch-action: none; }
+.overlay { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; background: linear-gradient(180deg, #07111bd9, #091321e8); backdrop-filter: blur(5px); transition: opacity .2s ease; }
+.overlay.hidden { opacity: 0; pointer-events: none; }
+.overlay-card { width: min(100%, 330px); text-align: center; line-height: 1.4; }
+.mini-car { font-size: 39px; margin-bottom: 12px; filter: drop-shadow(0 5px 15px #47e6df55); }
+.overlay h2 { font-size: clamp(43px, 10vw, 58px); line-height: .95; margin: 7px 0 12px; }
+.overlay-copy { color: #a7b4c5; font-size: 12px; line-height: 1.7; max-width: 280px; margin: 0 auto 22px; }
+.primary-btn { display: inline-flex; justify-content: center; align-items: center; gap: 20px; min-width: 205px; padding: 13px 19px; border: 0; border-radius: 9px; color: #0a1720; background: var(--lime); font-weight: 900; font-size: 12px; cursor: pointer; box-shadow: 0 7px 24px #c8ff5c24; transition: transform .15s, filter .15s; }
+.primary-btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.primary-btn span { font-size: 18px; line-height: 10px; }
+.hint { margin: 15px 0 0; color: #718198; font-size: 9px; }
+.result-icon { font-size: 35px; margin-bottom: 10px; }
+.result-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: 18px 0 20px; }
+.result-stats > div { padding: 10px 5px; background: #ffffff0a; border: 1px solid #ffffff12; border-radius: 8px; }
+.result-stats strong { font: 700 20px 'Barlow Condensed', sans-serif; }
+.game-footer { display: flex; justify-content: center; align-items: center; gap: 9px; padding: 14px 0 2px; color: #74849a; font-size: 8px; font-weight: 800; letter-spacing: 1.2px; }
+kbd { display: inline-grid; place-items: center; min-width: 17px; height: 18px; margin-right: 2px; padding: 0 3px; border: 1px solid #ffffff22; border-radius: 4px; color: #aeb9c8; background: #ffffff09; font: 700 9px 'DM Sans', sans-serif; }
+.footer-dot { color: var(--cyan); font-size: 7px; }
+.touch-controls { display: none; grid-template-columns: 1fr 1fr 1fr 1.5fr; gap: 8px; margin-top: 13px; }
+.touch-btn { min-height: 48px; border: 1px solid #ffffff1a; border-radius: 9px; background: #ffffff0a; color: var(--white); font-size: 22px; font-weight: 800; touch-action: none; user-select: none; }
+.touch-btn:active { background: #47e6df30; border-color: var(--cyan); }
+.touch-btn.brake { color: #ffbd69; }
+.touch-btn.gas { color: #0b1720; background: var(--lime); font-size: 11px; letter-spacing: 1px; }
+.page-footer { text-align: center; margin-top: 19px; color: #596a80; font-size: 8px; font-weight: 800; letter-spacing: 1.8px; }
+.page-footer span { color: var(--cyan); margin: 0 7px; }
+@media (pointer: coarse), (max-width: 600px) {
+  body { padding: 12px 10px 20px; }
+  .game-shell { padding: 14px; border-radius: 17px; }
+  .touch-controls { display: grid; }
+  .game-footer { font-size: 7px; }
+}
+@media (max-width: 380px) {
+  .hud-item { padding: 8px; }
+  .hud-item strong { font-size: 18px; }
+  .status-pill { font-size: 8px; }
+}
